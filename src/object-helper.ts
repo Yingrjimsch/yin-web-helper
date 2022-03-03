@@ -38,29 +38,11 @@ function deepCopy(source: any, dest: any): void {
             destKeys.splice(destKeys.indexOf(key.toString()), 1);
         }
         (typeof source[key] === 'object' && source[key] !== null) ? deepCopy(source[key], dest[key]) : dest[key] = source[key]
-        /*if (source.hasOwnProperty(key)) {
-            if (Array.isArray(source[key])) {
-                for (let i = 0; i < Object.values(source[key]).length; i++) {
-                    if (dest[key][i] === 'object' && source[key] !== null) {
-                        deepCopy(source[key][i], dest[key][i]);
-                    } else {
-                        dest[key] = source[key]
-                    }
-                }
-            } else if (typeof source[key] === 'object' && source[key] !== null) {
-                deepCopy(source[key], dest[key]);
-            } else {
-                dest[key] = source[key];
-                
-            }
-        }*/
     }
     for (const key of destKeys) {
         delete dest[key];
     }
     if(!compareObjectsByString(source, dest)) {
-        console.log(source);
-        console.log(dest);
         throw 'Error occured! It is most likely that the objects are not from the same type';
     }
 }
