@@ -1,8 +1,9 @@
 {
   "name": "yin-helpers",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Helper functions for web development",
+  "main": "lib/index.js",
+  "types": "lib/index.d.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -14,8 +15,12 @@
     "version" : "npm run format && git add -A src",
     "postversion" : "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yingrjimsch/yin-web-helper.git"
+  },
+  "keywords": ["Helper", "Copy", "Typescript"],
+  "author": "yingrjimsch",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.1",
