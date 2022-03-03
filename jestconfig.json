@@ -1,7 +1,12 @@
 {
+  "collectCoverage": true,
     "transform": {
       "^.+\\.(t|j)sx?$": "ts-jest"
     },
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}"
+    ],
+    "coverageReporters": ["text", "json", "json-summary"],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
